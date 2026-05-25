@@ -4,10 +4,14 @@ function editarEvento(&$datos) {
     echo "\n";
     titulo("EDITAR EVENTO", 102);
     listarEventos($datos);
-    if (empty($datos['eventos'])) return;
+    if (empty($datos['eventos'])) {
+        return;
+    }
     echo "  (0 para cancelar)\n";
     $id = (int)readline("\n  ID a editar: ");
-    if ($id === 0) return;
+    if ($id === 0) {
+        return;
+    }
     $e  = buscarEvento($datos, $id);
     if (!$e) {
         echo "\n  Evento no encontrado.\n";

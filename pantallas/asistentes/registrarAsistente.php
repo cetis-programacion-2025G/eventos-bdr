@@ -27,7 +27,9 @@ function registrarAsistente(&$datos) {
 
         $ids_disponibles = [];
         foreach ($datos['eventos'] as $e) {
-            if ($e['boletos_vendidos'] < $e['capacidad']) $ids_disponibles[] = $e['id'];
+            if ($e['boletos_vendidos'] < $e['capacidad']) {
+                $ids_disponibles[] = $e['id'];
+            }
         }
 
         if (empty($ids_disponibles)) {
@@ -38,7 +40,9 @@ function registrarAsistente(&$datos) {
 
         $validos = array_merge([0], $ids_disponibles);
         $id_evento = pedirEntero("  ID Evento (0 para volver)", $validos);
-        if ($id_evento === 0) break;
+        if ($id_evento === 0) {
+            break;
+        }
 
         $evento = null;
         foreach ($datos['eventos'] as $e) {
@@ -62,6 +66,8 @@ function registrarAsistente(&$datos) {
         echo "\n  Asistente registrado con $cantidad entrada(s). ID: $id.\n";
 
         $resp = strtolower(trim(readline("\n  ¿Registrar otro asistente? (s/n): ")));
-        if ($resp !== 's') $continuar = false;
+        if ($resp !== 's') {
+            $continuar = false;
+        }
     }
 }
