@@ -37,16 +37,7 @@ El equipo debe conservar el flujo principal del programa y reemplazar el uso de 
 
 ---
 
-## 5. Tablas mínimas sugeridas
-
-- `eventos`
-- `asistentes`
-
-El equipo puede agregar campos adicionales, pero no debe aumentar demasiado el alcance.
-
----
-
-## 6. Funciones mínimas del sistema
+## 5. Funciones mínimas del sistema
 
 - Ver eventos: lista nombre, fecha, lugar, capacidad, boletos vendidos y disponibles.
   Cuando un evento llega a su capacidad máxima debe indicar **Agotado** en la columna de disponibles.
@@ -58,7 +49,7 @@ El equipo puede agregar campos adicionales, pero no debe aumentar demasiado el a
 
 ---
 
-## 7. Consulta o reporte obligatorio
+## 6. Consulta o reporte obligatorio
 
 Reporte de evento: mostrar nombre del evento, fecha, lugar, capacidad, boletos vendidos y lista de asistentes registrados con sus entradas.
 
@@ -66,7 +57,7 @@ Esta consulta debe obtener información relacionada desde más de una tabla.
 
 ---
 
-## 8. Requisitos de base de datos
+## 7. Requisitos de base de datos
 
 El proyecto debe incluir:
 
@@ -78,7 +69,7 @@ El proyecto debe incluir:
 
 ---
 
-## 8.1. Diagrama ER obligatorio
+## 7.1. Diagrama ER obligatorio
 
 El equipo debe entregar un archivo `ER.mermaid` en la raíz del proyecto con el diagrama entidad-relación del modelo implementado.
 
@@ -87,7 +78,7 @@ El diagrama debe reflejar todas las tablas y relaciones reales del proyecto.
 
 ---
 
-## 9. Alcance limitado
+## 8. Alcance limitado
 
 Para que el proyecto sea posible en dos semanas, **no se pide**:
 
@@ -97,7 +88,7 @@ Para que el proyecto sea posible en dos semanas, **no se pide**:
 
 ---
 
-## 10. Reglas importantes
+## 9. Reglas importantes
 
 - No se debe cambiar el objetivo principal del sistema.
 - No se deben usar arreglos como almacenamiento final.
@@ -106,7 +97,7 @@ Para que el proyecto sea posible en dos semanas, **no se pide**:
 
 ---
 
-## 11. Entregable esperado
+## 10. Entregable esperado
 
 El equipo debe entregar:
 
