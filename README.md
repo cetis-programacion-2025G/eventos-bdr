@@ -69,6 +69,12 @@ El proyecto debe incluir:
 
 ---
 
+## 7.1. Diagrama ER obligatorio
+
+El equipo debe entregar un archivo `ER.mermaid` en la raíz del proyecto con el diagrama entidad-relación del modelo implementado.
+
+---
+
 ## 8. Alcance limitado
 
 Para que el proyecto sea posible en dos semanas, **no se pide**:
