@@ -1,0 +1,26 @@
+erDiagram
+
+EVENTOS {
+    INT id_evento PK 
+    VARCHAR(100) nombre 
+    DATE fecha 
+    VARCHAR(150) lugar 
+    INT capacidad 
+    INT boletos_vendidos 
+}
+
+ASISTENTES {
+    INT id_asistente PK 
+    VARCHAR(100) nombre 
+    VARCHAR(150) email 
+}
+
+INSCRIPCIONES {
+    INT id_inscripcion PK 
+    INT id_evento FK 
+    INT id_asistentes FK 
+    INT entradas 
+}
+
+EVENTOS ||--o{ INSCRIPCIONES : tiene
+ASISTENTES ||--o{ INSCRIPCIONES : realiza
