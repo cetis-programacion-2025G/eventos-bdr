@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS eventos_bdr;
+CREATE DATABASE eventos_bdr;
 USE eventos_bdr;
 
 CREATE TABLE eventos (
