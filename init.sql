@@ -28,3 +28,30 @@ CREATE TABLE inscripciones (
         REFERENCES asistentes(id_asistente)
         ON DELETE CASCADE
 );
+
+
+INSERT INTO eventos (nombre, fecha, lugar, capacidad, boletos_vendidos)
+VALUES
+('Concierto de Rock', '2025-07-15', 'Auditorio Nacional', 5000, 3500),
+('Festival de Música', '2025-08-10', 'Parque Central', 10000, 7500),
+('Conferencia de Tecnología', '2025-09-20', 'Centro de Convenciones', 2000, 1200),
+('Expo Emprendedores', '2025-10-05', 'Salón Empresarial', 1500, 900);
+
+
+INSERT INTO asistentes (nombre, email)
+VALUES
+('Juan Pérez', 'juanperez@gmail.com'),
+('María López', 'marialopez@hotmail.com'),
+('Carlos Sánchez', 'carlos.sanchez@yahoo.com'),
+('Ana Martínez', 'ana.martinez@gmail.com'),
+('Luis Torres', 'luis.torres@hotmail.com');
+
+
+INSERT INTO inscripciones (id_evento, id_asistente, entradas)
+VALUES
+(1, 1, 2),
+(1, 2, 1),
+(2, 3, 3),
+(3, 4, 1),
+(4, 5, 2),
+(2, 1, 1);
