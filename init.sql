@@ -32,26 +32,23 @@ CREATE TABLE inscripciones (
 
 INSERT INTO eventos (nombre, fecha, lugar, capacidad, boletos_vendidos)
 VALUES
-('Concierto de Rock', '2025-07-15', 'Auditorio Nacional', 5000, 3500),
-('Festival de Música', '2025-08-10', 'Parque Central', 10000, 7500),
-('Conferencia de Tecnología', '2025-09-20', 'Centro de Convenciones', 2000, 1200),
-('Expo Emprendedores', '2025-10-05', 'Salón Empresarial', 1500, 900);
-
+('Concierto Primavera', '2026-06-15', 'Auditorio Central', 200, 45),
+('Feria del Libro', '2026-06-20', 'Biblioteca Municipal', 100, 67),
+('Torneo de Robótica', '2026-07-05', 'CETIS Auditorio', 50, 30),
+('Obra de Teatro Escolar', '2026-07-12', 'Salón de Actos', 80, 15);
 
 INSERT INTO asistentes (nombre, email)
 VALUES
-('Juan Pérez', 'juanperez@gmail.com'),
-('María López', 'marialopez@hotmail.com'),
-('Carlos Sánchez', 'carlos.sanchez@yahoo.com'),
-('Ana Martínez', 'ana.martinez@gmail.com'),
-('Luis Torres', 'luis.torres@hotmail.com');
-
+('Ana López', 'ana@ejemplo.com'),
+('Carlos Pérez', 'carlos@ejemplo.com'),
+('Sofía Torres', 'sofia@ejemplo.com'),
+('Luis García', 'luis@ejemplo.com'),
+('María Sánchez', 'maria@ejemplo.com');
 
 INSERT INTO inscripciones (id_evento, id_asistente, entradas)
 VALUES
-(1, 1, 2),
+(1, 1, 1),
 (1, 2, 1),
-(2, 3, 3),
-(3, 4, 1),
-(4, 5, 2),
-(2, 1, 1);
+(2, 3, 1),
+(2, 4, 1),
+(3, 5, 1);
