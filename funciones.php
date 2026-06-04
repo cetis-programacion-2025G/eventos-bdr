@@ -10,6 +10,7 @@ require_once 'funciones/titulo.php';
 require_once 'funciones/limpiarPantalla.php';
 require_once 'funciones/esperarEnter.php';
 require_once 'funciones/pedirEntero.php';
+require_once 'funciones/mb_str_pad.php';
 require_once 'funciones/dibujarTabla.php';
 require_once 'funciones/datos.php';
 require_once 'funciones/conexion.php';
