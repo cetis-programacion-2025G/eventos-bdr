@@ -1,10 +1,19 @@
 <?php
-function eliminarEvento(&$datos, $id) {
-    for ($i = 0; $i < count($datos['eventos']); $i++) {
-        if ($datos['eventos'][$i]['id'] === $id) {
-            array_splice($datos['eventos'], $i, 1);
-            return true;
-        }
+
+function eliminarEvento($conn, $id) {
+
+    $consulta = "DELETE FROM eventos WHERE id_evento = ?"; //$consulta = "DELETE FROM eventos WHERE id = ?";
+
+    $stmt = $conn->prepare($consulta);
+    $stmt->bind_param("i", $id);
+
+    $result = $stmt->execute();
+
+    $stmt->close();
+
+    if (!$result) {
+        return false;
     }
-    return false;
+
+    return true;
 }

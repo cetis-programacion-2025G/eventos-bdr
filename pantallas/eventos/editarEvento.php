@@ -1,18 +1,17 @@
 <?php
-function editarEvento(&$datos) {
+function editarEvento($conn) {
+
     limpiarPantalla();
-    echo "\n";
     titulo("EDITAR EVENTO", 102);
-    listarEventos($datos);
-    if (empty($datos['eventos'])) {
-        return;
-    }
-    echo "  (0 para cancelar)\n";
-    $id = (int)readline("\n  ID a editar: ");
-    if ($id === 0) {
-        return;
-    }
-    $e  = buscarEvento($datos, $id);
+
+    listarEventos($conn);
+
+    $id = (int) readline("\n  ID a editar: ");
+
+    if ($id === 0) return;
+
+    $e = buscarEvento($conn, $id);
+
     if (!$e) {
         echo "\n  Evento no encontrado.\n";
         esperarEnter();
@@ -20,18 +19,21 @@ function editarEvento(&$datos) {
     }
 
     echo "\n  (Enter para conservar el valor actual)\n\n";
-    $nombre    = readline("  Nombre    [{$e['nombre']}]: ")    ?: $e['nombre'];
-    $fecha     = readline("  Fecha     [{$e['fecha']}]: ")     ?: $e['fecha'];
-    $lugar     = readline("  Lugar     [{$e['lugar']}]: ")     ?: $e['lugar'];
-    $capStr    = readline("  Capacidad [{$e['capacidad']}]: ");
+
+    $nombre = readline("  Nombre [{$e['nombre']}]: ");
+    if ($nombre === '') $nombre = $e['nombre'];
+
+    $fecha = readline("  Fecha [{$e['fecha']}]: ");
+    if ($fecha === '') $fecha = $e['fecha'];
+
+    $lugar = readline("  Lugar [{$e['lugar']}]: ");
+    if ($lugar === '') $lugar = $e['lugar'];
+
+    $capStr = readline("  Capacidad [{$e['capacidad']}]: ");
     $capacidad = ($capStr !== '') ? (int)$capStr : $e['capacidad'];
 
-    actualizarEvento($datos, $id, [
-        'nombre'    => $nombre,
-        'fecha'     => $fecha,
-        'lugar'     => $lugar,
-        'capacidad' => $capacidad,
-    ]);
+    actualizarEvento($conn, $id, $nombre, $fecha, $lugar, $capacidad);
+
     echo "\n  Evento actualizado.\n";
     esperarEnter();
 }

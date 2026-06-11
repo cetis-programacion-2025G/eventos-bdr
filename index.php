@@ -1,16 +1,15 @@
 <?php
-// Ejecutar: php index.php
 
-require_once 'datos.php';
 require_once 'funciones.php';
 
-$datos      = datosEventos();
-$eventos    = &$datos['eventos'];
-$asistentes = &$datos['asistentes'];
-$salir      = false;
+$conn = conectar();
+
+$salir = false;
 
 while (!$salir) {
-    system('clear');
+
+    limpiarPantalla();
+
     echo "\n";
     echo "╔════════════════════════════════════════╗\n";
     echo "║      SISTEMA DE EVENTOS               ║\n";
@@ -18,22 +17,40 @@ while (!$salir) {
     echo "║ 1. Ver eventos                        ║\n";
     echo "║ 2. Agregar evento                     ║\n";
     echo "║ 3. Registrar asistente                ║\n";
-    echo "║ 4. Ver asistentes de un evento        ║\n";
+    echo "║ 4. Ver asistentes                     ║\n";
     echo "║ 0. Salir                              ║\n";
     echo "╚════════════════════════════════════════╝\n";
 
-    $opcion = readline("\nOpcion: ");
+    $opcion = readline(" Opcion: ");
 
     switch ($opcion) {
-        case '1': verEventos($eventos);                              break;
-        case '2': agregarEvento($eventos);                           break;
-        case '3': registrarAsistente($eventos, $asistentes);        break;
-        case '4': verAsistentesPorEvento($eventos, $asistentes);    break;
-        case '0': $salir = true;                                     break;
+
+        case '1':
+            menuEventos($conn);
+            break;
+
+        case '2':
+            agregarEvento($conn);
+            break;
+
+        case '3':
+            registrarAsistente($conn);
+            break;
+
+        case '4':
+            menuAsistentes($conn);
+            break;
+
+        case '0':
+            $salir = true;
+            break;
+
         default:
             echo "Opcion no valida.\n";
             readline("Enter para continuar...");
     }
 }
+
+$conn->close();
 
 echo "\nHasta luego.\n";

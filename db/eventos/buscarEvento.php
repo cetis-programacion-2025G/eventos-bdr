@@ -1,9 +1,10 @@
 <?php
-function buscarEvento(&$datos, $id) {
-    for ($i = 0; $i < count($datos['eventos']); $i++) {
-        if ($datos['eventos'][$i]['id'] === $id) {
-            return $datos['eventos'][$i];
-        }
-    }
-    return null;
+function buscarEvento($conn, $id) {
+
+    $sql = "SELECT * FROM eventos WHERE id_evento = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+
+    return $stmt->get_result()->fetch_assoc();
 }

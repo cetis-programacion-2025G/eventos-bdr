@@ -1,5 +1,12 @@
 <?php
-// TODO (MySQL):
-function obtenerEventos(&$datos) {
-    return $datos['eventos'];
+function obtenerEventos($conn) {
+
+    $sql = "SELECT * FROM eventos";
+    $result = $conn->query($sql);
+
+    if (!$result) {
+        return [];
+    }
+
+    return $result->fetch_all(MYSQLI_ASSOC);
 }
